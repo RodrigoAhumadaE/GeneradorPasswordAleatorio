@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center mt-3">
+    <h1 class="display-6">Contraseña Aleatoria Nº @Context.Session.GetInt32("num")</h1>
+</div>
+<div class="password mt-4">
+    <h2 class="pass">@Context.Session.GetString("pass")</h2>
+    <div class="botones">
+        <form asp-controller="Home" asp-action="ProcesaPassword">
+            <button class="btn btn-success">Generar Contraseña</button>
+        </form>
+        <form asp-controller="Home" asp-action="Reset">
+            <button class="btn btn-secondary">Resetear contador</button>
+        </form>
+    </div>
+    
+</div>
